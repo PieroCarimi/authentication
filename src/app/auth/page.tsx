@@ -1,5 +1,5 @@
 "use client"
-// pages/auth.tsx
+
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -37,9 +37,7 @@ const AuthPage = () => {
             const accessToken = new URLSearchParams(data).get("access_token");
             console.log(accessToken);
             if (accessToken) {
-              // Salva l'access token nel localStorage
               localStorage.setItem('accessToken', accessToken);
-              // Esegui la navigazione alla pagina di benvenuto
               router.push('/welcome');
             } else {
               console.error("Access token non trovato nella risposta");
